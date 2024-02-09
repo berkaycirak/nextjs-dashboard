@@ -5,7 +5,7 @@ import {
   DocumentDuplicateIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 
@@ -22,16 +22,10 @@ const links = [
 ];
 
 export default function NavLinks() {
-  const [number, setNumber] = useState(0);
   const pathname = usePathname();
-
-  useEffect(() => {
-    setNumber(number + 1);
-  }, []);
 
   return (
     <>
-      {number}
       {links.map((link) => {
         const LinkIcon = link.icon;
         return (
